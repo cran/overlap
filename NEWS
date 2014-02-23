@@ -1,3 +1,9 @@
+CHANGES IN VERSION 0.2.2
+
+* overlapPlot gains argument ylim (wish of Jesse Lewis)
+
+* densityPlot gains arguments ylim, xlab, ylab (wish of Wenhong Xiao)
+
 CHANGES IN VERSION 0.2.0
 
 * Fixed bug in overlapPlot (reported by Jesse Lewis) and added overlapPlot to
