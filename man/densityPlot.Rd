@@ -8,7 +8,8 @@ Plot fitted kernel densities
 Fits a kernel density function to a data set and plots it.
 }
 \usage{
-densityPlot(A, xscale = 24, add = FALSE, rug = FALSE, n.grid = 128,
+densityPlot(A, xscale = 24, xcenter = c("noon", "midnight"),
+   add = FALSE, rug = FALSE, n.grid = 128,
    kmax = 3, adjust = 1, ylim, xlab="Time", ylab="Density", ...)
 }
 
@@ -19,8 +20,11 @@ a vector of times of observations in \emph{radians}, ie. scaled to [\eqn{0, 2\pi
   \item{xscale}{
 The scale for the x axis: 24 (the default) produces a curve with 0 to 24 hours. NA gives a scale in radians, labelled with \eqn{pi}.
 }
+  \item{xcenter}{
+the center of the plot on the x axis: 'noon' (default) or 'midnight'.
+}
   \item{add}{
-If TRUE, the curve will be added to the existing plot. 
+If TRUE, the curve will be added to the existing plot. Use the same settings for xscale and xcenter as for the original plot.
 }
   \item{rug}{
 If TRUE, the original observations will be displayed as a rug at the bottom of the plot.
@@ -61,6 +65,15 @@ data(simulatedData)
 densityPlot(pigObs, rug=TRUE, main="Simulated data")
 densityPlot(tigerObs, add=TRUE, rug=TRUE, col='blue')
 legend('topleft', c("Tiger", "Pig"), lty=1, col=c('black', 'blue'), bg='white')
+# Add vertical dotted lines to mark sunrise (say 05:30) and sunset (18:47):
+# (times must be in hours if the x-axis is labelled in hours)
+abline(v=c(5.5, 18+47/60), lty=3)
+
+# A plot centered on midnight:
+densityPlot(pigObs, xcenter = "m")
+# Mark sunrise/sunset; values to the left of "00:00" are negative
+# so subtract 24:
+abline(v=c(5.5, (18+47/60) - 24), lty=3)
 
 # Using object returned:
 densityPlot(pigObs, xscale=1, rug=TRUE, lwd=3)
