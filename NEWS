@@ -1,3 +1,16 @@
+TO DO
+
+CHANGES IN VERSION 0.2.4
+
+* plotting functions make full use of the dots argument (...); formal arguments
+  ylim, xlab, ylab, etc, removed.
+
+* densityPlot and overlapPlot gain an 'extend' argument: if not NULL, the
+  plot is extended by 3 hrs each side of the focal 24-hr period and 'extend'
+  specifies the background colour to use; if NULL, the plot is not extended.
+
+* overlapPlot gains a rug argument (suggestion of Anand Roopsind)
+
 CHANGES IN VERSION 0.2.3
 
 * overlapPlot and densityPlot gain argument xcenter, which controls whether the
