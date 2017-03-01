@@ -1,10 +1,10 @@
-7930fb574b81ce07d85be51d954b55b6 *DESCRIPTION
-d9bff1e39df244e45d6b87dc9a98ed51 *NAMESPACE
-cbd062d6a8866d9dbda1a75a72595761 *NEWS
+6202270022c44781b56c72668809309f *DESCRIPTION
+ad331a09890a1ade62252302e3654fe2 *NAMESPACE
+06ab30f90e111b35edf3646d71d1f958 *NEWS
 7a2e3c366f9dcd6b6412540b4721a8d4 *R/Resample.R
 f013e43041de9a24d126d76123f53dd3 *R/bootCI.R
 af258e225a38cfd04d2d87866a4e4731 *R/bootEst.R
-f1293733ae0577b452fca3f47e3f35d0 *R/densityFit.R
+e41975aaf01f96719f16f27857cf8526 *R/densityFit.R
 7132c0d73388392e0d03468e56eed21c *R/densityPlot.R
 c2f20cf72ae1b793d814cf8d677b83bf *R/getBandWidth.R
 d53676374d3e75ec4bb7fae0a16e1baf *R/miscPlottingUtils.R
@@ -12,12 +12,12 @@ b8c8aa8ac17c40e26c7a9c9348ba9cce *R/overlapEst.R
 153d2c33cf925636273e4bbcf26fcdaa *R/overlapPlot.R
 e58b7407218c8ae91c12a72d74f45fd0 *R/overlapTrue.R
 946ba3ba0ce5bbc06efafd5a013455cb *README
-c3e8b36aae34cb8219ade1ea9146ca6e *build/vignette.rds
+7705291acbda6e67e09595a49d35166e *build/vignette.rds
 24a549ebbb6706630b277b6516dcedeb *data/kerinci.rda
-f4cd2bbe5dd37151fdb87e867114766a *data/simulatedData.rda
+5de481533b50d60e58de9002bc49172b *data/simulatedData.rda
 cf98eac80df61cb2423dc319166c2457 *inst/doc/overlap.R
 2e982235b6f75aabc3474510ffe6abbb *inst/doc/overlap.Rnw
-ef21ff5c987ff82050c2dec058afb8ed *inst/doc/overlap.pdf
+a39bbab1a5ccc6b01a46ede1c71181f5 *inst/doc/overlap.pdf
 e29b6b388ba7838a891b33fd765bc250 *inst/tests/testthat/test-all.R
 09617151bca4801f3a6e52ed7f838bb7 *man/bootCI.Rd
 e0d1e787be84545352a6847e17a8f92a *man/bootEst.Rd
@@ -39,5 +39,6 @@ c8e329d01b69e42912f60b822c6b062c *man/overlap-package.Rd
 b745c38827f2057aac5fd320b8f562ff *man/overlapTrue.Rd
 2dfdf3fafb8f0517d1b530be20926d78 *man/simulatedData.Rd
 60c2b33f32f568d01cd78006afec0b34 *src/densRad.c
+f4ff0d9f00ae4d71170b384f11db3860 *src/init.c
 2e982235b6f75aabc3474510ffe6abbb *vignettes/overlap.Rnw
 3302f927036f5495bcada40894acbbc4 *vignettes/overlap.bib
