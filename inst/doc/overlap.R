@@ -46,7 +46,7 @@ text(2, 0.1, "adjust = 0.2")
 tig2 <- timeRad[kerinci$Zone == 2 & kerinci$Sps == 'tiger']
 mac2 <- timeRad[kerinci$Zone == 2 & kerinci$Sps == 'macaque']
 min(length(tig2), length(mac2))
-tigmac2est <- overlapEst(tig2, mac2)
+tigmac2est <- overlapEst(tig2, mac2, type="Dhat4")
 tigmac2est 
 overlapPlot(tig2, mac2, main="Zone 2")
 legend('topright', c("Tigers", "Macaques"), lty=c(1,2), col=c(1,4), bty='n')
@@ -64,23 +64,19 @@ dim(mac2boot)
 ###################################################
 ### code chunk number 8: bootstrap2
 ###################################################
-tigmac2 <- bootEst(tig2boot, mac2boot, adjust = c(NA, 1, NA))  # takes a few seconds
-dim(tigmac2)
-BSmean <- colMeans(tigmac2)
-BSmean
+tigmac2 <- bootEst(tig2boot, mac2boot, type="Dhat4")  # takes a few seconds
+( BSmean <- mean(tigmac2) )
 
 
 ###################################################
 ### code chunk number 9: bootstrapCI
 ###################################################
-tmp <- tigmac2[, 2] # Extract the required column of the matrix
-bootCI(tigmac2est[2], tmp)
+bootCI(tigmac2est, tigmac2)
 
 
 ###################################################
 ### code chunk number 10: bootstrapCIlogit
 ###################################################
-tmp <- tigmac2[, 2] # Extract the required column of the matrix
-bootCIlogit(tigmac2est[2], tmp)
+bootCIlogit(tigmac2est, tigmac2)
 
 

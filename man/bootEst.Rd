@@ -12,7 +12,8 @@ The strategy implemented involves three steps: 1. Create a matrix of bootstrap s
 \usage{
 resample(x, nb, smooth = TRUE, kmax = 3, adjust = 1, n.grid = 512)
 
-bootEst(Amat, Bmat, kmax = 3, adjust=c(0.8, 1, 4), n.grid = 128)
+bootEst(Amat, Bmat, kmax = 3, adjust=c(0.8, 1, 4), n.grid = 128,
+      type=c("all", "Dhat1", "Dhat4", "Dhat5"), cores=1)
 }
 
 \arguments{
@@ -37,20 +38,26 @@ bandwidth adjustment: see Details.
   \item{n.grid}{
 number of points at which to estimate density for comparison between species; smaller values give lower precision but run faster in bootstraps.
 }
+  \item{type}{
+the name of the estimator to use, or "all" to produce all three estimates. See \code{\link{overlapEst}} for recommendations on which to use.
+}
+  \item{cores}{
+the number of cores to use for parallel processing. If NA, all but one of the available cores will used. Parallel processing may take longer than serial processing if the bootstrap runs quickly.
+}
 }
 
 \details{
 bandwidth adjustment:
 \itemize{
 \item for \code{resample}, a single value.
-\item for \code{bootEst}, either a single value used for all 3 overlap estimates, or a vector of 3 different values; a NA value in \code{adjust} means that the corresponding estimate will not be calculated. 
+\item for \code{bootEst}, if \code{type = "all"}, either a single value used for all 3 overlap estimates, or a vector of 3 different values; otherwise, a single value.
 }
 }
 
 \value{
 The function \code{resample} returns a numeric matrix with each column corresponding to a bootstrap sample. Times are in \emph{radians}. It may return a matrix of NAs if \code{smooth = TRUE} and bandwidth estimation fails.
 
-Function \code{bootEst} returns a numeric matrix with three columns, one for each estimator of overlap. If argument \code{adjust} contains NAs, the corresponding columns in the output will be NAs. If bandwidth estimation fails for a bootstrap sample, the corresponding row will contain NAs.
+Function \code{bootEst} with \code{type = "all"} returns a numeric matrix with three columns, one for each estimator of overlap, otherwise a vector of bootstrap estimates. If bandwidth estimation fails for a bootstrap sample, the corresponding value will be NA.
 }
 
 \references{
@@ -71,5 +78,11 @@ dim(tigSim)
 pigSim <- resample(pigObs, 99)
 boots <- bootEst(tigSim, pigSim)
 colMeans(boots)
+# or just do Dhat4
+boots <- bootEst(tigSim, pigSim, type="Dhat4")
+mean(boots)
+# parallel processing takes longer for this example
+boots <- bootEst(tigSim, pigSim, type="Dhat4", cores=2)
+mean(boots)
 
 }

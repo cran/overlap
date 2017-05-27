@@ -22,13 +22,13 @@ Maintainer: Mike Meredith <mmeredith@wcs.org>
 
 \seealso{
 See \code{\link{overlapTrue}} for the definition of the coefficient of overlapping, and \code{\link{overlapEst}} for equations for the estimators. See \code{\link{kerinci}} for an example of calculation of overlap and confidence interval from real data.
+
+The \R package \pkg{activity} has more functions for analysis of animal activity patterns.
 }
 
 \references{
 Ridout & Linkie (2009) Estimating overlap of daily activity patterns from camera trap data. \emph{Journal of Agricultural, Biological, and Environmental Statistics} 14:322-337
 }
-
-\keyword{ package }
 
 \examples{
 # Get example data:
@@ -39,8 +39,9 @@ overlapEst(tigerObs, pigObs)
 #     Dhat1     Dhat4     Dhat5 
 # 0.2908618 0.2692011 0.2275000  
 
-overlapEst(tigerObs, pigObs, adjust=c(NA, 1, NA))
-#    Dhat1     Dhat4     Dhat5 
-#       NA 0.2692011        NA 
-
+overlapEst(tigerObs, pigObs, type="Dhat4")
+# Dhat4
+# 0.2692011
 }
+
+\keyword{ package }
