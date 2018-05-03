@@ -2,8 +2,9 @@ Package: overlap
 Type: Package
 Title: Estimates of Coefficient of Overlapping for Animal Activity
         Patterns
-Version: 0.3.0
-Date: 2017-05-27
+Version: 0.3.2
+Date: 2018-05-03
+Suggests: maptools, sp
 Author: Mike Meredith and Martin Ridout
 Maintainer: Mike Meredith <mmeredith@wcs.org>
 Description: Provides functions to fit kernel density functions to
@@ -13,6 +14,6 @@ Description: Provides functions to fit kernel density functions to
 License: GPL (>= 3)
 NeedsCompilation: yes
 ByteCompile: yes
-Packaged: 2017-05-27 07:38:19 UTC; MIKE
+Packaged: 2018-05-03 04:02:42 UTC; MIKE
 Repository: CRAN
-Date/Publication: 2017-05-27 16:07:23 UTC
+Date/Publication: 2018-05-03 07:03:07 UTC
