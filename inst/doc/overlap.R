@@ -47,7 +47,7 @@ tig2 <- timeRad[kerinci$Zone == 2 & kerinci$Sps == 'tiger']
 mac2 <- timeRad[kerinci$Zone == 2 & kerinci$Sps == 'macaque']
 min(length(tig2), length(mac2))
 tigmac2est <- overlapEst(tig2, mac2, type="Dhat4")
-tigmac2est 
+tigmac2est
 overlapPlot(tig2, mac2, main="Zone 2")
 legend('topright', c("Tigers", "Macaques"), lty=c(1,2), col=c(1,4), bty='n')
 
@@ -55,27 +55,18 @@ legend('topright', c("Tigers", "Macaques"), lty=c(1,2), col=c(1,4), bty='n')
 ###################################################
 ### code chunk number 7: bootstrap1
 ###################################################
-tig2boot <- resample(tig2, 1000)
-dim(tig2boot)
-mac2boot <- resample(mac2, 1000)
-dim(mac2boot)
-
-
-###################################################
-### code chunk number 8: bootstrap2
-###################################################
-tigmac2 <- bootEst(tig2boot, mac2boot, type="Dhat4")  # takes a few seconds
+tigmac2 <- bootstrap(tig2, mac2, 1000, type="Dhat4")  # takes a few seconds
 ( BSmean <- mean(tigmac2) )
 
 
 ###################################################
-### code chunk number 9: bootstrapCI
+### code chunk number 8: bootstrapCI
 ###################################################
 bootCI(tigmac2est, tigmac2)
 
 
 ###################################################
-### code chunk number 10: bootstrapCIlogit
+### code chunk number 9: bootstrapCIlogit
 ###################################################
 bootCIlogit(tigmac2est, tigmac2)
 
