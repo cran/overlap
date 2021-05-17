@@ -1,4 +1,12 @@
 
+CHANGES IN VERSION 0.3.4 (2021-05-13)
+
+  * Fixed: rebuilding of vignette with R-devel (thanks to Kurt Hornik).
+
+  * Reformatted data sets as '.rda' files.
+
+  * Additions to 'densityPlot' examples.
+
 CHANGES IN VERSION 0.3.3 (2020-05-09)
 
   * Updated 'testthat' tests for new RNGkind.
