@@ -9,9 +9,12 @@ importFrom("stats", "approx", "plogis", "qlogis", "qnorm", "runif",
 importFrom("utils", "modifyList")
 importFrom("parallel", "detectCores", "makeCluster", "stopCluster",
       "parLapply", "clusterEvalQ", "clusterExport", "parSapply")
+importFrom("suntools", "sunriset")
+
 
 export(densityPlot, densityFit, getBandWidth,
   overlapTrue, overlapEst, overlapPlot,
+  sunTime,
   bootstrap, resample, bootEst, bootCI, bootCIlogit)
 
 # Not exported: rejectSampleRad, quantileInter

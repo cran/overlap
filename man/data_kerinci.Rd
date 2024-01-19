@@ -58,7 +58,7 @@ length(spsB)
 ( Dhat1 <- overlapEst(spsA, spsB, type="Dhat1") )
 
 # Do 999 smoothed bootstrap values:
-bs <- bootstrap(spsA, spsB, 999, type="Dhat1")
+bs <- bootstrap(spsA, spsB, 999, type="Dhat1", cores=1)
 mean(bs)
 hist(bs)
 abline(v=Dhat1, col='red', lwd=2)

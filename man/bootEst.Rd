@@ -73,11 +73,12 @@ Mike Meredith, including code by Martin Ridout.
 \seealso{
 \code{\link{bootCI}}.
 }
+
 \examples{
 data(simulatedData)
 est <- overlapEst(tigerObs, pigObs, type="Dhat4")
 
-boots <- bootstrap(tigerObs, pigObs, 99, type="Dhat4")
+boots <- bootstrap(tigerObs, pigObs, 99, type="Dhat4", cores=1)
 mean(boots)
 hist(boots)
 bootCI(est, boots)
@@ -86,6 +87,6 @@ bootCI(est, boots)
 tigSim <- resample(tigerObs, 99)
 dim(tigSim)
 pigSim <- resample(pigObs, 99)
-boots <- bootEst(tigSim, pigSim, type="Dhat4")
+boots <- bootEst(tigSim, pigSim, type="Dhat4", cores=1)
 mean(boots)
 }
